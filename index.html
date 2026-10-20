@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Máximo Soto · Portafolio de diseño y electrónica</title>
+  <meta name="description" content="Portafolio universitario de diseño, arquitectura y electrónica.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <a class="brand" href="#inicio">Máximo Soto</a>
+    <nav>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- PORTADA -->
+    <section class="hero" id="inicio">
+      <div class="hero-texto">
+        <p class="label">Portafolio universitario · 2026</p>
+        <h1>Diseño que se puede<br>construir, y electrónica<br>que se puede habitar.</h1>
+        <p class="lead">
+          Soy estudiante de Ingeniería en Diseño e Ingeniería Comercial en la Universidad Adolfo Ibáñez, en Chile. Mi trabajo combina el diseño de espacios y de productos con la robótica, la electrónica y la programación.
+        </p>
+        <a class="btn" href="#proyectos">Ver proyectos ↓</a>
+      </div>
+      <!-- Foto de perfil: sube tu imagen a la carpeta images con el nombre foto-perfil.jpg -->
+      <div class="hero-foto"><img src="images/foto-perfil.jpg" alt="Retrato de Máximo Soto" onerror="this.parentElement.remove()"></div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section class="section" id="proyectos">
+      <div class="section-head">
+        <h2>Proyectos</h2>
+        <div class="filters" role="group" aria-label="Filtrar proyectos">
+          <button class="filter active" data-filter="todos">Todos</button>
+          <button class="filter" data-filter="diseno">Diseño</button>
+          <button class="filter" data-filter="electronica">Electrónica</button>
+          <button class="filter" data-filter="3d">Modelado e impresión 3D</button>
+        </div>
+      </div>
+
+      <!--
+        CÓMO FUNCIONA CADA TARJETA
+        - La imagen de la portada (dentro de <div class="thumb">) es siempre la primera de la galería.
+        - Dentro de <div class="gallery" hidden> van las imágenes y videos ADICIONALES, en el orden en que quieres mostrarlos.
+        - Puedes copiar y pegar líneas <img>, <video> o <iframe> sin tocar nada más.
+        - data-cat define en qué filtros aparece la tarjeta: diseno, electronica, 3d (se pueden combinar).
+        - data-caption en una imagen agrega un pie de foto visible en la ventana del proyecto.
+        - Un bloque <div class="detalle" hidden> dentro de card-body guarda texto extra que solo se ve en la ventana del proyecto.
+      -->
+
+      <div class="grid">
+
+        <article class="card" data-cat="electronica diseno 3d">
+          <div class="thumb"><img src="images/jansen1.jpg" alt="Mecanismo de Jansen de la araña caminadora, sin fondo" data-caption="Mecanismo de Jansen real, imagen con el fondo eliminado" onerror="this.remove()"></div>
+          <div class="gallery" hidden>
+            <img src="images/consturrcion_Araña.jpeg" alt="Construcción del mecanismo de Jansen" data-caption="Construcción del mecanismo (foto real)" loading="lazy">
+            <iframe src="https://www.youtube.com/embed/6eFgdurYHBw" title="Demostración de la araña caminadora" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <!-- Video propio (el archivo va en la carpeta videos). Quita las marcas de comentario para activarlo:
+            <video src="videos/arana.mp4" controls preload="none"></video>
+            -->
+          </div>
+          <div class="card-body">
+            <p class="tag">Robótica · Diseño mecánico</p>
+            <h3>Araña caminadora</h3>
+            <p>Robot caminante de 1 metro de largo, 30 cm de ancho y 45 cm de alto. Dos motores eléctricos pequeños mueven un mecanismo de Jansen que genera la marcha.</p>
+            <div class="detalle" hidden>
+              <p>Lo modelé en Fusion 360 y lo construí con piezas impresas en 3D en PLA, MDF cortado con láser y tubos metálicos de cortina.</p>
+            </div>
+            <p class="tools">Fusion 360 · Mecanismo de Jansen · Impresión 3D · Corte láser</p>
+            <div class="actions">
+              <button class="more" type="button" data-open>Ver proyecto →</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-cat="electronica diseno 3d">
+          <div class="thumb"><img src="images/IMG_3634.jpg" alt="Control de brazo robótico" data-caption="Control de brazo robótico: foto real" onerror="this.remove()"></div>
+          <div class="gallery" hidden>
+            <img src="images/control_mano.jpeg" alt="Control de brazo robótico en uso" data-caption="Control en uso" loading="lazy">
+            <iframe src="https://www.youtube.com/embed/fNZeH3FPYZw" title="Demostración del controlador de brazo robótico" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="card-body">
+            <p class="tag">Electrónica · Diseño ergonómico</p>
+            <h3>Control de brazo robótico</h3>
+            <p>Control manual que une un diseño ergonómico impreso en 3D con programación IoT. Su forma se inspira en la ergonomía de las pistolas y en cómo estas se relacionan con la mano. Se comunica de forma cableada y por WiFi para controlar el movimiento de un brazo robótico.</p>
+            <p class="tools">ESP32 · IoT · WiFi · Impresión 3D</p>
+            <div class="actions">
+              <button class="more" type="button" data-open>Ver proyecto →</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-cat="electronica diseno 3d">
+          <div class="thumb"><img src="images/torreta.jpg" alt="Fotografía de la torreta de elásticos" data-caption="Torreta de elásticos: fotografía real" onerror="this.remove()"></div>
+          <div class="gallery" hidden>
+            <img src="images/torreta-2.jpg" alt="Diseño de la torreta de elásticos montado en Fusion 360" data-caption="Diseño de la torreta montado en Fusion 360" loading="lazy">
+            <img src="images/Logica_ametralladora.png" alt="Esquema de conexiones eléctricas de la torreta" data-caption="Esquema de conexiones eléctricas entre el Arduino, los motores y el joystick" loading="lazy">
+            <iframe src="https://www.youtube.com/embed/Uz4xJ4O0wEA" title="Demostración de la torreta de elásticos" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="card-body">
+            <p class="tag">Electrónica · Robótica</p>
+            <h3>Torreta de elásticos</h3>
+            <p>Torreta que dispara elásticos, nacida de la idea de automatizar la típica pistola de juguete de madera que se conoce en Chile. La modelé en Fusion 360, la fabriqué con impresión 3D y la programé con un Arduino Uno R3.</p>
+            <div class="detalle" hidden>
+              <p>Con un joystick controlo dos motores ubicados en distintas partes del mecanismo, uno para el movimiento lateral y otro para el vertical, y el disparo del elástico lo acciona un motor paso a paso. Todo se energizó con una batería de taladro de 18 V, y el Arduino con una pila de 9 V.</p>
+            </div>
+            <p class="tools">Fusion 360 · Arduino Uno R3 · Motor paso a paso · Joystick · Impresión 3D</p>
+            <div class="actions">
+              <button class="more" type="button" data-open>Ver proyecto →</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-cat="diseno 3d">
+          <div class="thumb"><img src="images/Studio Setup 01.png" alt="Render en vista explosionada de la rodillera" data-caption="Render de la rodillera en vista explosionada" onerror="this.remove()"></div>
+          <div class="gallery" hidden>
+            <img src="images/Studio Setup 03.png" alt="Detalle de la pieza de TPU de la rodillera que se ajusta a la pierna" data-caption="Detalle de la pieza de TPU que abraza la pierna y se ajusta a ella" loading="lazy">
+            <img src="images/Studio Setup 07.png" alt="Pieza de unión y limitador de ángulo de la rodillera" data-caption="Pieza de unión y limitador de ángulo, impresa en resina" loading="lazy">
+            <img src="images/Studio Setup 08.png" alt="Paneles de TPU que rodean la pierna" data-caption="Paneles de TPU que rodean la pierna" loading="lazy">
+            <img src="images/pierna_rodillera.jpg" alt="Rodillera puesta en la pierna" data-caption="Rodillera en uso" loading="lazy">
+          </div>
+          <div class="card-body">
+            <p class="tag">Diseño de producto · Fabricación</p>
+            <h3>Rodillera con limitador de ángulo</h3>
+            <p>Rodillera que limita tanto la flexión excesiva como la hiperextensión de la rodilla, y que combina distintos tipos de fabricación: impresión en TPU, corte de aluminio con waterjet e impresión en resina.</p>
+            <div class="detalle" hidden>
+              <p>El material en contacto con la piel es TPU impreso, flexible para adaptarse al cuerpo. Las guías laterales son de aluminio cortado con waterjet: marcan el ángulo de la rodilla y aportan rigidez. La unión entre las guías y el limitador está impresa en resina, y junta esa rigidez con la flexibilidad de la impresión aditiva.</p>
+            </div>
+            <p class="tools">TPU · Resina · Aluminio · Corte waterjet</p>
+            <div class="actions">
+              <button class="more" type="button" data-open>Ver proyecto →</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-cat="electronica diseno">
+          <div class="thumb"><img src="images/render_pulsera_prototipo.png" alt="Render de los componentes de la pulsera" data-caption="Render en Fusion 360 de los componentes de la pulsera" onerror="this.remove()"></div>
+          <div class="gallery" hidden>
+            <img src="images/image-Photoroom.png" alt="Prototipo de la pulsera puesto en un brazo" data-caption="Prototipo real de la pulsera en el brazo" loading="lazy">
+            <iframe src="https://www.canva.com/design/DAHWx0wvSso/nflzruBLPkTLsTk8acJxtQ/view?embed" title="Presentación del proyecto L!NK" loading="lazy" allow="fullscreen" allowfullscreen></iframe>
+          </div>
+          <div class="card-body">
+            <p class="tag">En desarrollo · Electrónica · Diseño de producto</p>
+            <h3>L!NK: pulseras interactivas</h3>
+            <p>Proyecto activo, actualmente en etapa de prototipado. El objetivo es desarrollar pulseras que permitan jugar y compartir datos de contacto al chocar las manos, con la información visible en el celular o en la web. Esas son metas por cumplir: por ahora el prototipo funciona únicamente mediante NFC.</p>
+            <p class="tools">Microcontroladores · NFC · Diseño de producto</p>
+            <div class="actions">
+              <button class="more" type="button" data-open>Ver proyecto →</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-cat="electronica diseno 3d">
+          <div class="thumb"><img src="images/DSC01346.JPG" alt="Audífonos ya armados sobre una mesa" data-caption="Audífonos ya armados, sobre una mesa" onerror="this.remove()"></div>
+          <div class="gallery" hidden>
+            <iframe src="https://www.youtube.com/embed/H1DcafTUAYs" title="Video de los audífonos 3D" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <img src="images/Audifonos_uso.jpeg" alt="Audífonos 3D en uso" data-caption="Audífonos 3D en uso" loading="lazy">
+          </div>
+          <div class="card-body">
+            <p class="tag">Proyecto personal · Diseño 3D · Electrónica</p>
+            <h3>Audífonos 3D</h3>
+            <p>Cuando se rompieron mis audífonos favoritos, en vez de botarlos decidí reutilizar sus componentes.</p>
+            <div class="detalle" hidden>
+              <p>Rescaté los drivers, que eran de muy buena calidad, y modelé e imprimí unos audífonos nuevos para ellos. El proyecto reúne diseño 3D, electrónica y reciclaje.</p>
+            </div>
+            <p class="tools">Modelado 3D · Impresión 3D · Reutilización de componentes</p>
+            <div class="actions">
+              <button class="more" type="button" data-open>Ver proyecto →</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-cat="diseno 3d">
+          <div class="thumb"><img src="images/23_Sunrise_000.png" alt="Interior de la Casa Catenaria, recreación en Twinmotion" data-caption="Casa Catenaria (recreación de Max Núñez): interior · Twinmotion · Curso Representación Visual II" onerror="this.remove()"></div>
+          <div class="gallery" hidden>
+            <!-- Curso Modelación 2D y 3D, agrupado por entrega -->
+            <img src="images/Soto_Maximo_E1_Render 2.png" alt="Adaptador de toma de corriente, desglose de materiales y componentes" data-caption="Entrega 1 · Adaptador de toma de corriente: desglose de materiales y componentes, y estudio de luces y otros parámetros · Substance 3D Stager · Curso Modelación 2D y 3D" loading="lazy">
+            <img src="images/Soto_Maximo_E1_Render 3.png" alt="Adaptador de toma de corriente, estudio de luces" data-caption="Entrega 1 · Adaptador de toma de corriente: desglose de materiales y componentes, y estudio de luces y otros parámetros · Substance 3D Stager · Curso Modelación 2D y 3D" loading="lazy">
+            <img src="images/Soto_Maximo_E2_Render 2.png" alt="Atomizador de agua, desglose de materiales y componentes" data-caption="Entrega 2 · Atomizador de agua: desglose de materiales y componentes, y estudio de luces y otros parámetros · Substance 3D Stager · Curso Modelación 2D y 3D" loading="lazy">
+            <img src="images/Soto_Maximo_E2_Render_3.png" alt="Atomizador de agua, estudio de cámaras y materiales" data-caption="Entrega 2 · Atomizador de agua: estudio de cámaras y materiales · Substance 3D Stager · Curso Modelación 2D y 3D" loading="lazy">
+            <img src="images/Soto_Maximo_E3_Render4.png" alt="Nivelador de burbuja modelado en Rhino" data-caption="Entrega 3 · Nivelador de burbuja, modelado en Rhino · Substance 3D Stager · Curso Modelación 2D y 3D" loading="lazy">
+            <img src="images/Soto_Maximo_E3_Render3.png" alt="Nivelador de burbuja modelado en Rhino" data-caption="Entrega 3 · Nivelador de burbuja, modelado en Rhino · Substance 3D Stager · Curso Modelación 2D y 3D" loading="lazy">
+            <img src="images/Soto_Maximo_E3_Render2.png" alt="Nivelador de burbuja modelado en Rhino" data-caption="Entrega 3 · Nivelador de burbuja, modelado en Rhino · Substance 3D Stager · Curso Modelación 2D y 3D" loading="lazy">
+            <!-- Curso Representación Visual II -->
+            <img src="images/24_Sunrise_000.png" alt="Interior de la Casa Catenaria, recreación en Twinmotion" data-caption="Casa Catenaria (recreación de Max Núñez): interior · Twinmotion · Curso Representación Visual II" loading="lazy">
+            <img src="images/este3.png" alt="Exterior de diseño propio de la Casa Catenaria" data-caption="Casa Catenaria (recreación de Max Núñez): exterior de diseño propio · Twinmotion · Curso Representación Visual II" loading="lazy">
+            <img src="images/Image5.png" alt="Lámpara de mesa, desglose de materiales y componentes" data-caption="Lámpara de mesa: desglose de materiales y componentes · Twinmotion · Curso Representación Visual II" loading="lazy">
+            <img src="images/Image11.png" alt="Lámpara de mesa, estudio de luces" data-caption="Lámpara de mesa: estudio de luces y otros parámetros · Twinmotion · Curso Representación Visual II" loading="lazy">
+            <!-- Curso Diseño de Espacios -->
+            <img src="images/8_Day.png" alt="Casa de Vidrio, exterior de diseño propio modelado en Fusion 360" data-caption="Casa de Vidrio (recreación de Max Núñez), modelada en Fusion 360, con exterior de diseño propio · Twinmotion · Curso Diseño de Espacios" loading="lazy">
+          </div>
+          <div class="card-body">
+            <p class="tag">Diseño · Modelado y render</p>
+            <h3>Modelado y renderizado 3D</h3>
+            <p>Selección de renders de estructuras, ambientes y objetos, modelados en Rhino y Fusion 360 y renderizados con Substance 3D Stager y Twinmotion. Reúne trabajos de tres cursos: Modelación 2D y 3D, Representación Visual II y Diseño de Espacios.</p>
+            <p class="tools">Rhino · Fusion 360 · Substance 3D Stager · Twinmotion</p>
+            <div class="actions">
+              <button class="more" type="button" data-open>Ver proyecto →</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-cat="3d">
+          <div class="thumb"><img src="images/Trail_running.png" alt="Rutas de trekking de los cerros El Carbón, Manquehue, Manquehuito y El Peñón, impresas en 3D" data-caption="Rutas de trekking de los cerros El Carbón, Manquehue, Manquehuito y El Peñón · Proyecto propio (trabajo UAI) · PLA+" onerror="this.remove()"></div>
+          <div class="gallery" hidden>
+            <img src="images/Rodillo_Masa.png" alt="Rodillo impreso en 3D para grabar cerámica, masa y arcilla con un brazo robótico" data-caption="Rodillo para grabar cerámica, masa y arcilla con un brazo robótico KUKA KR 4 R600 · Proyecto propio (trabajo UAI) · PLA+" loading="lazy">
+            <img src="images/Trabajo_Paralelo.png" alt="Pabellón de listones de madera a escala, impreso en 3D" data-caption="Pabellón de listones de madera a escala · Comisión (solo impresión) · PLA+" loading="lazy">
+            <img src="images/Soporte_MilleniumFalcon.png" alt="Soporte expositor para el Lego Millennium Falcon" data-caption="Soporte expositor para el Lego Millennium Falcon · Comisión (solo impresión) · PETG" loading="lazy">
+            <img src="images/Protector_Mando_PS5.png" alt="Protector para mandos de PS5" data-caption="Protector para mandos de PS5 · Proyecto propio (solo impresión) · PETG y PLA" loading="lazy">
+            <img src="images/Cortacarton.png" alt="Cortacartón portátil con imanes" data-caption="Cortacartón portátil con imanes · Comisión (impresión adaptada) · PLA+, PETG, ABS y ASA" loading="lazy">
+            <img src="images/llaver.png" alt="Carabina de escalada para llavero" data-caption="Carabina de escalada para llavero · Proyecto propio (solo impresión) · PLA" loading="lazy">
+          </div>
+          <div class="card-body">
+            <p class="tag">Fabricación · Impresión 3D</p>
+            <h3>Impresiones 3D propias y comisionadas</h3>
+            <p>Piezas impresas en 3D que reúnen mis proyectos propios y los trabajos que realizo por encargo, desde rutas de trekking y un rodillo para un brazo robótico hasta soportes y herramientas de uso cotidiano.</p>
+            <div class="detalle" hidden>
+              <p>En mis proyectos propios busco entender la materialidad y los usos de cada material, y llevar la estructura de la impresión a su límite: modelar para aprovechar al máximo el formato FDM.</p>
+              <p>En las comisiones, el proceso cambia según el encargo. Si hay que modelar un repuesto, pido el objeto para tomar medidas precisas. Si se trata de algo nuevo, voy consultando y mostrando avances periódicamente, lo que implica un mayor valor. En otros casos solo imprimo un modelo existente, a veces adaptándolo.</p>
+              <p>Según el tipo de objeto y su función, recomiendo la altura de capa, el número de paredes, el relleno y el material. El acabado se acuerda antes y puede ser pintado, impresión sin postprocesar o acabado químico, si el material lo permite.</p>
+              <p>La entrega se coordina por Bluexpress o con retiro presencial. Los plazos suelen ir de 3 días a 2 semanas, más el envío, según la demanda del momento.</p>
+            </div>
+            <p class="tools">Impresión 3D · PLA · TPU · Resina · ASA · ABS · PETG · Pedidos externos</p>
+            <div class="actions">
+              <button class="more" type="button" data-open>Ver proyecto →</button>
+              <a class="more" href="mailto:maximo.a.sotocavieres@gmail.com?subject=Cotización de impresión 3D">Pedir una cotización →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-cat="diseno 3d">
+          <div class="thumb"><img src="images/foto logging hill.jpg" alt="Render propio de Logging Hill" data-caption="Logging Hill: render propio" onerror="this.remove()"></div>
+          <div class="gallery" hidden>
+            <img src="images/analisis logging hill.jpg" alt="Análisis estructural y disposicional del pabellón de Logging Hill de Taichi Kuma en asociacion con Tailand." data-caption="Logging Hill (Taichi Kuma, TAILAND): análisis estructural y de disposición del pabellón" loading="lazy">
+            <img src="images/GH logging hill.png" alt="Programación y lógica en Grasshopper. Ampliar imagen para observar comandos" data-caption="Logging Hill: programación y lógica en Grasshopper (amplía la imagen para ver los comandos)" loading="lazy">
+            <img src="images/Torre_elevada 1.jpg" alt="Documento de detalles de la estructura Floating Planes" data-caption="Floating Planes (estructura original): documento de detalles (1 de 2)" loading="lazy">
+            <img src="images/Torre_elevada 2.jpg" alt="Documento de detalles de la estructura Floating Planes" data-caption="Floating Planes (estructura original): documento de detalles (2 de 2)" loading="lazy">
+            <img src="images/GH_FloatingPlanes.png" alt="Definición de Grasshopper de la estructura Floating Planes" data-caption="Floating Planes (estructura original): programación en Grasshopper" loading="lazy">
+          </div>
+          <div class="card-body">
+            <p class="tag">Diseño · Modelado paramétrico</p>
+            <h3>Estructuras de anillos en Grasshopper</h3>
+            <p>Proyecto en Grasshopper con dos estructuras: una recreación de Logging Hill, el pabellón de Taichi Kuma (TAILAND), y una estructura original llamada Floating Planes.</p>
+            <div class="detalle" hidden>
+              <p>La primera estructura la hice para entender cómo funciona la geometría de Logging Hill, un pabellón formado por tres anillos de madera entrelazados. La segunda, Floating Planes, está inspirada en la anterior y en ella exploré el uso de anillos y la tensegridad.</p>
+            </div>
+            <p class="tools">Grasshopper · Rhino · Diseño paramétrico</p>
+            <div class="actions">
+              <button class="more" type="button" data-open>Ver proyecto →</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section class="section about" id="sobre-mi">
+      <h2>Sobre mí</h2>
+      <div class="about-grid">
+        <div>
+          <p>Estudio Ingeniería en Diseño e Ingeniería Comercial en la Universidad Adolfo Ibáñez, en Chile. He trabajado en diseño de espacios y de productos, robótica, electrónica y programación, con proyectos como robots caminantes, torretas a control remoto, controles para brazos robóticos, refugios modulares y representaciones 3D de objetos y edificios.</p>
+          <p>Me apasionan la modelación digital, la impresión 3D, la programación, la electrónica y el Internet de las cosas (IoT).</p>
+        </div>
+        <ul class="skills">
+          <li><span>Modelado 3D</span>Rhino, Fusion 360, Blender, AutoCAD, planimetría, Grasshopper</li>
+          <li><span>Render</span>Twinmotion, Substance 3D Stager</li>
+          <li><span>Fabricación</span>Impresión 3D (PLA, TPU, resina, ABS, PETG, ASA), corte láser, corte waterjet, router CNC, torno CNC, maquetas</li>
+          <li><span>Electrónica</span>ESP32, Arduino, IoT, sensores, motores, servos</li>
+          <li><span>Programación</span>C++, HTML, CSS, RStudio</li>
+          <li><span>Idiomas</span>Español, inglés</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="section contact" id="contacto">
+      <h2>Contacto</h2>
+      <p>¿Quieres conversar sobre un proyecto, una práctica o una colaboración?</p>
+      <p class="links">
+        <a href="mailto:maximo.a.sotocavieres@gmail.com">maximo.a.sotocavieres@gmail.com</a>
+        <a href="https://github.com/MaxSoto-dsgn" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/m%C3%A1ximo-soto-cavieres-495017404/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.instagram.com/max_st7/" target="_blank" rel="noopener">Instagram</a>
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Máximo Soto · Hecho a mano con HTML y CSS</p>
+  </footer>
+
+  <!-- VENTANA DE PROYECTO (se llena sola con JavaScript, no la edites) -->
+  <div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+    <button class="close" type="button" aria-label="Cerrar">✕</button>
+    <div class="modal-box">
+      <div class="modal-media">
+        <div class="slides"></div>
+        <button class="nav prev" type="button" aria-label="Anterior">←</button>
+        <button class="nav next" type="button" aria-label="Siguiente">→</button>
+        <p class="counter"></p>
+      </div>
+      <div class="modal-info"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
