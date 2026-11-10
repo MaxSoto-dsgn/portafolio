@@ -147,6 +147,16 @@ h2 { font-size: clamp(1.7rem, 3vw, 2.2rem); }
 }
 .btn:hover { background: var(--accent); transform: translateY(-2px); }
 
+/* Botones de la portada y botón de CV */
+.hero-acciones { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn-linea {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  padding: 11px 21px;
+}
+.btn-linea:hover { background: var(--ink); color: var(--bg); }
+
 /* ---------- Filtros ---------- */
 .section-head {
   display: flex;
